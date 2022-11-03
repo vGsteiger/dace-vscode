@@ -2062,6 +2062,13 @@
       "default": false,
       "indirected": true
     },
+    "tasking": {
+      "metatype": "bool",
+      "desc": "Map tasking",
+      "category": "General",
+      "default": true,
+      "indirected": true
+    },
     "collapse": {
       "metatype": "int",
       "desc": "How many dimensions to collapse into the parallel range",
@@ -2225,6 +2232,12 @@
       "desc": "Map unrolling",
       "category": "General",
       "default": false
+    },
+    "tasking": {
+      "metatype": "bool",
+      "desc": "Map tasking",
+      "category": "General",
+      "default": true
     },
     "collapse": {
       "metatype": "int",
@@ -2605,6 +2618,13 @@
       "default": false,
       "indirected": true
     },
+    "tasking": {
+      "metatype": "bool",
+      "desc": "Map tasking",
+      "category": "General",
+      "default": true,
+      "indirected": true
+    },
     "collapse": {
       "metatype": "int",
       "desc": "How many dimensions to collapse into the parallel range",
@@ -2798,6 +2818,12 @@
       "desc": "Map unrolling",
       "category": "General",
       "default": false
+    },
+    "tasking": {
+      "metatype": "bool",
+      "desc": "Map tasking",
+      "category": "General",
+      "default": true
     },
     "collapse": {
       "metatype": "int",
@@ -8409,7 +8435,7 @@
       "desc": "List of passe names that this pipeline contains",
       "category": "General",
       "default": []
-    }
+  }
   },
   "TransientReuse": {}
 }
