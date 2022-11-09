@@ -700,29 +700,7 @@ export class VSCodeSDFV extends SDFV {
     }
 
     public async getMetaDict(): Promise<{ [key: string]: any }> {
-        if (!this.sdfgMetaDict) {
-            // If SDFG property metadata isn't available, use the static one and
-            // query an up-to-date one from the dace github page. If that
-            // doesn't work, query the daemon (waking it up if it isn't up).
-            if (!this.queryMetaDictFunc)
-                this.queryMetaDictFunc = fetch(
-                    'https://spcl.github.io/dace/metadata/sdfg_meta_dict.json'
-                ).then(
-                    (response) => response.json()
-                );
-
-            return this.queryMetaDictFunc.then((data) => {
-                this.sdfgMetaDict = data;
-                this.queryMetaDictFunc = null;
-                return this.sdfgMetaDict;
-            }).catch((reason) => {
-                console.error(reason);
-                this.sdfgMetaDict = staticSdfgMetaDict;
-                this.queryMetaDictFunc = null;
-                return this.sdfgMetaDict;
-            });
-        }
-        return this.sdfgMetaDict;
+        return staticSdfgMetaDict;
     }
 
     public getViewingHistoryState(): boolean {
